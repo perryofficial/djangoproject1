@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Vehicle</title>
+</head>
+<body>
+
+<h1>Edit vehicle</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <p>
+        Vehicle No:
+        <input type="text" name="vehicle_number" value="{{ vehicle.vehicle_number }}">
+    </p>
+
+    <p>
+        Name:
+        <input type="text" name="vehicle_name" value="{{ vehicle.vehicle_name }}">
+    </p>
+
+    <p>
+        Type:
+        <input type="text" name="vehicle_type" value="{{ vehicle.vehicle_type }}">
+    </p>
+
+    <p>
+        Brand:
+        <input type="text" name="brand" value="{{ vehicle.brand }}">
+    </p>
+
+    <p>
+        Model:
+        <input type="text" name="model" value="{{ vehicle.model }}">
+    </p>
+
+    <p>
+        Fuel Type:
+        <input type="text" name="fuel_type" value="{{ vehicle.fuel_type }}">
+    </p>
+
+    <p>
+        Purchase Date:
+        <input type="date" name="purchase_date" value="{{ vehicle.purchase_date }}">
+    </p>
+
+    <button type="submit">
+        Update Vehicle
+    </button>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clothes Management</title>
+    </head>
+    <body>
+
+        <h1>Clothes Management System</h1>
+
+        <a href="{% url 'add_clothes' %}">Add New Clothes</a>
+        <br><br>
+
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>ID</th>
+                <th>Item Name</th>
+                <th>Brand</th>
+                <th>Size</th>
+                <th>Color</th>
+                <th>Price</th>
+                <th>In Stock</th>
+                <th>Actions</th>
+            </tr>
+
+            {% for item in clothes %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.item_name }}</td>
+                <td>{{ item.brand }}</td>
+                <td>{{ item.size }}</td>
+                <td>{{ item.color }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.in_stock }}</td>
+                <td>
+                    <a href="{% url 'edit_clothes' item.id %}">Edit</a>
+                    |
+                    <a href="{% url 'delete_clothes' item.id %}">Delete</td>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </body>

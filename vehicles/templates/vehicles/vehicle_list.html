@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vehicles List</title>
+</head>
+<body>
+    <h1>Vehicles List</h1>
+    <a href="/vehicles/add/">Add New Vehicle</a>
+    <br><br>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Vehicle No.</th>
+            <th>Name</th>
+            <th>type</th>
+            <th>brand</th>
+            <th>model</th>
+            <th>fuel type</th>
+            <th>purchase date</th>
+            <th>Actions</th>
+        </tr>
+        {% for vehicle in vehicles %}
+        <tr>
+            <td>{{ vehicle.vehicle_number }}</td>
+            <td>{{ vehicle.vehicle_name }}</td>
+            <td>{{ vehicle.vehicle_type }}</td>
+            <td>{{ vehicle.brand }}</td>
+            <td>{{ vehicle.model }}</td>
+            <td>{{ vehicle.fuel_type }}</td>
+            <td>{{ vehicle.purchase_date }}</td>
+            <td>
+                <a href="/vehicles/edit/{{ vehicle.id }}/">Edit</a>
+                |
+                <a href="/vehicles/delete/{{ vehicle.id }}/">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

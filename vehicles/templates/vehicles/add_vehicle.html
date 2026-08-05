@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Vehicle</title>
+    </head>
+    <body>
+        <h1>Add Vehicle</h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+
+            <p>
+                Vehicle No:
+                <input type="text" name="vehicle_number">
+            </p>
+
+            <p>
+                Name:
+                <input type="text" name="vehicle_name">
+            </p>
+
+            <p>
+                Type:
+                <input type="text" name="vehicle_type">
+            </p>
+
+            <p>
+                Brand:
+                <input type="text" name="brand">
+            </p>
+
+            <p>
+                Model:
+                <input type="text" name="model">
+            </p>
+
+            <p>
+                Fuel Type:
+                <input type="text" name="fuel_type">
+            </p>
+
+            <p>
+                Purchase Date:
+                <input type="date" name="purchase_date">
+            </p>
+
+            <button type="submit">Save Vehicle</button>
+        </form>
+    </body>
+</html>
